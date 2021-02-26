@@ -77,6 +77,8 @@ color:red;
 font-size:1rem;
 `;
 
+
+
 export default function PizzaCreator(props){
     const { value,disabled,errors,change,submit} = props;
     const history = useHistory()
@@ -220,6 +222,9 @@ export default function PizzaCreator(props){
                 onChange={onChange}
                 />
                 </DivStyle>
+
+                
+
             <button id={'submitButton'} disabled={disabled}>Submit</button>
 
             
