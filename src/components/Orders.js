@@ -27,6 +27,10 @@ h3{
 
 export default function Orders(props){
     const {orders} = props;
+    function camel(key) {
+        var result = key.replace( /([A-Z])/, " $1" );
+        return result.toLowerCase();
+     }
     // eslint-disable-next-line eqeqeq
     if (orders=='') {
         return (
@@ -42,7 +46,7 @@ export default function Orders(props){
             <h3>Order #{index + 1}</h3>
             <p><span>Pizza size: </span>{order.size}</p>
             <p><span>Sauce: </span>{order.sauce}</p>
-            <p><span>Toppings: </span>{order.toppings == '' ? 'NO' : order.toppings.map(topping => {return (`${topping}; `)})}</p>
+            <p><span>Toppings: </span>{order.toppings == '' ? 'NO' : order.toppings.map(topping => {return (`${camel(topping)}; `)})}</p>
             <p><span>Special instructions: </span>{order.special==='' ? 'NO' : order.special}</p>
             <p><span>Client's name: </span>{order.name}</p>
             </NoOrders>

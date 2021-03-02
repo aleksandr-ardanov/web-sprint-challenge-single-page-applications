@@ -88,6 +88,7 @@ const App = () => {
     .catch(err => {
       setFormErrors({...formErrors, [name]: err.errors[0]})
     })
+
     setFormValues({...formValues, [name]:value})
   }
 
